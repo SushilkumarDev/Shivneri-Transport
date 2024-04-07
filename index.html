@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="javascript:void(0);" class="menu-btn" onclick="openSidebar()">&#9776; Menu</a>
+  <a href="#" class="active"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="#"><i class="fa fa-fw fa-list-alt"></i> Services</a>
+  <a href="#"><i class="fa fa-fw fa-trophy"></i> Achievements</a>
+  <div class="topnav-right">
+    <a href="#" id="loginBtn" onclick="openLoginForm()"><i class="fa fa-fw fa-sign-in"></i> Login</a>
+    <a href="#" id="signupBtn" onclick="openSignupForm()"><i class="fa fa-fw fa-user-plus"></i> Sign Up</a>
+  </div>
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0);" class="close-btn" onclick="closeSidebar()">&times;</a>
+  <a href="#about"><i class="fa fa-address-card"></i> About</a>
+  <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+</div>
+
+<div id="loginForm" class="form-container">
+  <div class="form-content">
+    <span class="close" onclick="closeLoginForm()">&times;</span>
+    <h2>Login</h2>
+    <form action="/login.php">
+      <label for="username">Username</label>
+      <input type="text" id="login-username" name="username" required>
+      <label for="password">Password</label>
+      <input type="password" id="login-password" name="password" required>
+      <button type="submit">Login</button>
+    </form>
+    <div class="bottom-text">
+      <p>Don't have an account? <a href="#" onclick="closeLoginForm(); openSignupForm()">Sign Up</a></p>
+    </div>
+  </div>
+</div>
+
+<div id="signupForm" class="form-container">
+  <div class="form-content">
+    <span class="close" onclick="closeSignupForm()">&times;</span>
+    <h2>Sign Up</h2>
+    <form action="/register.php">
+      <label for="username">Username</label>
+      <input type="text" id="signup-username" name="username" required>
+      <label for="email">Email</label>
+      <input type="email" id="signup-email" name="email" required>
+      <label for="password">Password</label>
+      <input type="password" id="signup-password" name="password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="bottom-text">
+      <p>Already have an account? <a href="#" onclick="closeSignupForm(); openLoginForm()">Login</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
